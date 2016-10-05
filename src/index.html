@@ -10,7 +10,7 @@
     <md-content class="se-vertical-layout" ng-controller="WidgetCtrl">
       <div id="container" class="se-vl-center-container">
 
-        <div id="widgets">
+        <div id="components" class="section">
           <md-card class="offering" ng-repeat="product in offering.allProducts">
             <div class="thumbnail">
               <span class="label"> {{ product.asset.metadata.type}} </span>
@@ -34,7 +34,7 @@
           </md-card>
         </div>
 
-        <div id="products">
+        <div id="products" class="section">
           <md-card class="offering" ng-repeat="product in offering.allProducts">
             <div class="thumbnail">
               <span class="label"> Widget </span>
@@ -58,7 +58,7 @@
           </md-card>
         </div>
 
-        <div id="paymentInfo">
+        <div id="paymentInfo" class="section">
           <md-card class="priceplan" ng-repeat="priceplan in offering.productOfferingPrice">
             <div ng-class="getPanelType(priceplan)">
               <p class="centerText">{{ priceplan.name }}</p>

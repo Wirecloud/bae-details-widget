@@ -27,7 +27,7 @@ angular
                     label: "Components",
                     closable: false
                 });
-                widgetData.wrapperElement.appendChild(document.getElementById("widgets"));
+                widgetData.wrapperElement.appendChild(document.getElementById("components"));
 
                 var tabPayment = notebook.createTab({
                     label: "Pricing",

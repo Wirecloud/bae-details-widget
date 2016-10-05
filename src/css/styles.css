@@ -96,6 +96,16 @@
     float: left;
 }
 
+.section {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.section > .md-card {
+    display: inline-flex;
+    flex-shrink: 0;
+}
+
 .buyButton {
     float: right;
 }
