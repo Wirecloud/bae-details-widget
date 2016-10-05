@@ -3,7 +3,7 @@
 
   <details>
     <title>BAE details</title>
-    <homepage>https://github.com/Mognom/bae-details-widget</homepage>
+    <homepage>https://github.com/Wirecloud/bae-details-widget</homepage>
     <authors>Alejandro Rodriguez</authors>
     <email>alex.rodriguez@conwet.com</email>
     <image></image>
@@ -13,7 +13,7 @@
     <changelog>doc/changelog.md</changelog>
     <doc>doc/index.md</doc>
     <license>MIT</license>
-    <issuetracker>https://github.com/mognom/bae-details-widget/issues</issuetracker>
+    <issuetracker>https://github.com/Wirecloud/bae-details-widget/issues</issuetracker>
   </details>
 
   <wiring>
