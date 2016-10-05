@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<widget xmlns="http://wirecloud.conwet.fi.upm.es/ns/macdescription/1" vendor="CoNWeT" name="bae-details" version="0.1.0">
+
+  <details>
+    <title>BAE details</title>
+    <homepage>https://github.com/Mognom/bae-details-widget</homepage>
+    <authors>Alejandro Rodriguez</authors>
+    <email>alex.rodriguez@conwet.com</email>
+    <image></image>
+    <smartphoneimage></smartphoneimage>
+    <description>The best project ever.</description>
+    <longdescription>DESCRIPTION.md</longdescription>
+    <changelog>doc/changelog.md</changelog>
+    <doc>doc/index.md</doc>
+    <license>MIT</license>
+    <issuetracker>https://github.com/mognom/bae-details-widget/issues</issuetracker>
+  </details>
+
+  <wiring>
+    <inputendpoint name="offering" type="text" label="Offering" description="" friendcode=""/>
+  </wiring>
+
+  <contents src="index.html" useplatformstyle="true"/>
+  <rendering height="200" width="200"/>
+</widget>
