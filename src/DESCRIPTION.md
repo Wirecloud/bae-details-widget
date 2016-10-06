@@ -1,3 +1,1 @@
-This widget allows you to [...]
-
-## References
+The BAE details widget is a WireCloud widget that provides the ability to displaye the details of an offering, such as the products, its pricing and the Wirecloud components it provides.

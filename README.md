@@ -1,7 +1,7 @@
-My project name widget
+BAE Details Widget
 ======================
 
-The My project name widget is a WireCloud widget that provides ...
+The BAE details widget is a WireCloud widget that provides the ability to displaye the details of an offering, such as the products, its pricing and the Wirecloud components it provides.
 
 Build
 -----
@@ -43,27 +43,19 @@ If everything goes well, you will find a wgt file in the `dist` folder.
 
 ## Settings
 
-`Write here the preferences`
+No settings needed for this widget to work.
 
 ## Wiring
 
-
 ### Input Endpoints
 
-`Write here the input wiring endpoints`
-
-
-### Output Endpoints
-
-
-`Write here the output wiring endpoints`
+-`Offering`: The offering whose details are to be displayed.
 
 ## Usage
 
+This Widget its created dynamically by the [bae-browser-widget](https://github.com/Wirecloud/bae-browser-widget) so it doesnt need to be added to the dashboard when being used by it.
 
-## Reference
-
-- [FIWARE Mashup](https://mashup.lab.fiware.org/)
+Send an offering with a complete productSpecification field to its input to display the offering's details.
 
 ## Copyright and License
 
