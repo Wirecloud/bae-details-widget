@@ -36,10 +36,7 @@
 
         <div id="products" class="section">
           <md-card class="offering" ng-repeat="product in offering.allProducts">
-            <div class="thumbnail">
-              <span class="label"> Widget </span>
-              <img class="image" ng-src="{{ getDefaultImage(product) }}">
-            </div>
+            <div class="thumbnail">              <img class="image" ng-src="{{ getDefaultImage(product) }}">            </div>
             <div class="panel-body">
               <div id="offeringName" class="h4 text ellipsis">
                 <strong>

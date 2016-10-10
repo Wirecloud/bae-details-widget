@@ -16,30 +16,9 @@ angular
         var init = function init () {
 
             MashupPlatform.wiring.registerCallback('offering', function (offering) {
-                // Create tabs
+                // Clear view
                 $scope.offering = [];
                 $scope.$apply();
-
-                var notebook = new StyledElements.Notebook({});
-                document.getElementById("container").appendChild(notebook.wrapperElement);
-
-                var widgetData = notebook.createTab({
-                    label: "Components",
-                    closable: false
-                });
-                widgetData.wrapperElement.appendChild(document.getElementById("components"));
-
-                var tabPayment = notebook.createTab({
-                    label: "Pricing",
-                    closable: false
-                });
-                tabPayment.wrapperElement.appendChild(document.getElementById("paymentInfo"));
-
-                var tabData = notebook.createTab({
-                    label: "Products",
-                    closable: false
-                });
-                tabData.wrapperElement.appendChild(document.getElementById("products"));
 
                 // Set data
                 if (offering.productSpecification.isBundle) {
@@ -47,6 +26,36 @@ angular
                 } else {
                     offering.allProducts = [offering.productSpecification];
                 }
+
+                // Create tabs
+                var notebook = new StyledElements.Notebook({});
+                document.getElementById("container").appendChild(notebook.wrapperElement);
+
+                // Only create component tab if theres any component.
+                if (offering.allProducts.some(function (product) {
+                    return product.asset && product.asset.resourceType === "Wirecloud component";
+                })) {
+                    var widgetData = notebook.createTab({
+                        label: "Components",
+                        closable: false
+                    });
+                    widgetData.wrapperElement.appendChild(document.getElementById("components"));
+                } else {
+                    document.getElementById("components").remove();
+                }
+
+                var tabData = notebook.createTab({
+                    label: "Products",
+                    closable: false
+                });
+
+                tabData.wrapperElement.appendChild(document.getElementById("products"));
+
+                var tabPayment = notebook.createTab({
+                    label: "Pricing",
+                    closable: false
+                });
+                tabPayment.wrapperElement.appendChild(document.getElementById("paymentInfo"));
 
                 // Update view
                 $scope.offering = offering;
