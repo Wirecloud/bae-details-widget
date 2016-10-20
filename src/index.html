@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8" />
+    <meta charset="utfvad-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="css/angular-material.min.css" />
     <link rel="stylesheet" type="text/css" href="css/styles.css" />
@@ -15,7 +15,7 @@
             <div class="thumbnail">
               <span class="label"> {{ product.asset.metadata.type}} </span>
               <img class="image" ng-src="{{ getDefaultImage(product) }}">
-            </div>
+            </div>  
             <div class="panel-body">
               <div id="offeringName" class="h4 text ellipsis">
                 <strong>
@@ -30,6 +30,9 @@
                 <p>v{{ product.asset.metadata.version}}</p>
                 <p>{{ product.asset.metadata.description ? product.asset.metadata.description : 'No description provided' }}</p>
               </div>
+            </div>
+            <div class="buttonsDiv">
+              <md-button id="installButton" class="se-btn btn-warning" ng-click="onToggleInstall(product)">{{ product.installed ? "Uninstall" : "Install" }}</md-button>
             </div>
           </md-card>
         </div>

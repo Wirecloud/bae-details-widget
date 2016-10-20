@@ -15,7 +15,9 @@
     <license>MIT</license>
     <issuetracker>https://github.com/Wirecloud/bae-details-widget/issues</issuetracker>
   </details>
-
+    <requirements>
+    <feature name="ComponentManagement"/>
+  </requirements>
   <wiring>
     <inputendpoint name="offering" type="text" label="Offering" description="" friendcode=""/>
   </wiring>

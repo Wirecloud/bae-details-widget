@@ -20,13 +20,6 @@ angular
                 $scope.offering = [];
                 $scope.$apply();
 
-                // Set data
-                if (offering.productSpecification.isBundle) {
-                    offering.allProducts = offering.productSpecification.bundledProductSpecification;
-                } else {
-                    offering.allProducts = [offering.productSpecification];
-                }
-
                 // Create tabs
                 var notebook = new StyledElements.Notebook({});
                 document.getElementById("container").appendChild(notebook.wrapperElement);
@@ -62,6 +55,7 @@ angular
                 $scope.getDefaultImage = getDefaultImage;
                 $scope.getPriceAlterationData = getPriceAlterationData;
                 $scope.getPanelType = getPanelType;
+                $scope.onToggleInstall = toggleInstall;
                 $scope.$apply();
             });
         };
@@ -86,6 +80,31 @@ angular
 
         var getPanelType = function getPanelType(priceplan) {
             return "panel-heading-" + priceplan.priceType;
+        };
+
+        // Install / uninstall target offering
+        var toggleInstall = function toggleInstall (product) {
+            if (!(product.asset && product.asset.resourceType === "Wirecloud component")) {
+                return;
+            }
+
+            if (product.installed) {
+                var meta = product.asset.metadata;
+                MashupPlatform.components.uninstall(meta.vendor, meta.name, meta.version);
+            } else {
+                MashupPlatform.components.install(getAssetUrl(product));
+            }
+
+            product.installed = !product.installed;
+        };
+
+        //Get the location of a product's asset.
+        var getAssetUrl = function getAssetUrl (product) {
+            for (var i = 0; i < product.productSpecCharacteristic.length; i++) {
+                if (product.productSpecCharacteristic[i].name === "Location") {
+                    return product.productSpecCharacteristic[i].productSpecCharacteristicValue[0].value;
+                }
+            }
         };
 
         init();

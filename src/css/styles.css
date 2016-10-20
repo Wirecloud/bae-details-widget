@@ -133,3 +133,11 @@
     background-color: #FFA726;
     border-color: #FFA726;
 }
+
+.buttonsDiv {
+    text-align: center;
+    margin-top: auto;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    margin-left: 10px;
+}
