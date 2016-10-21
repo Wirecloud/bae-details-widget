@@ -88,14 +88,18 @@ angular
                 return;
             }
 
+            var promise;
+
             if (product.installed) {
                 var meta = product.asset.metadata;
-                MashupPlatform.components.uninstall(meta.vendor, meta.name, meta.version);
+                promise = MashupPlatform.components.uninstall(meta.vendor, meta.name, meta.version);
             } else {
-                MashupPlatform.components.install(getAssetUrl(product));
+                promise = MashupPlatform.components.install(getAssetUrl(product));
             }
 
-            product.installed = !product.installed;
+            promise.then(function () {
+                product.installed = !product.installed;
+            });
         };
 
         //Get the location of a product's asset.
