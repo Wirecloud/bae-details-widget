@@ -13,9 +13,14 @@ angular
     .controller('WidgetCtrl', function ($scope, $resource) {
         "use strict";
 
+        var callback;
         var init = function init () {
 
-            MashupPlatform.wiring.registerCallback('offering', function (offering) {
+            MashupPlatform.wiring.registerCallback('offering', function (data) {
+
+                var offering = data.offering;
+                callback = data.callback;
+
                 // Clear view
                 $scope.offering = [];
                 $scope.$apply();
@@ -98,7 +103,7 @@ angular
             }
 
             promise.then(function () {
-                product.installed = !product.installed;
+                callback (product, !product.installed);
             });
         };
 
