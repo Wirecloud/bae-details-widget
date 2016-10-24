@@ -94,12 +94,16 @@ angular
             }
 
             var promise;
+            var market_info = {
+                name: "admin/fiware-bae",
+                store: "fiware-bae",
+            };
 
             if (product.installed) {
                 var meta = product.asset.metadata;
                 promise = MashupPlatform.components.uninstall(meta.vendor, meta.name, meta.version);
             } else {
-                promise = MashupPlatform.components.install(getAssetUrl(product));
+                promise = MashupPlatform.components.install(getAssetUrl(product), market_info);
             }
 
             promise.then(function () {
