@@ -10,6 +10,16 @@
 
 angular
     .module('widget', ['ngMaterial', 'ngResource', "angularMoment"])
+    .directive('checkImage', function () {
+        "use strict";
+        return {
+            link: function (scope, element, attrs) {
+                element.bind("error", function () {
+                    element.attr("src", scope.baseUrl + "/resources/core/images/default-no-image.png"); // set default image
+                });
+            }
+        };
+    })
     .controller('WidgetCtrl', function ($scope, $resource) {
         "use strict";
 
@@ -24,6 +34,7 @@ angular
                 // Clear view
                 $scope.offering = [];
                 $scope.$apply();
+                $scope.baseUrl = MashupPlatform.prefs.get('server_url');
 
                 // Create tabs
                 var notebook = new StyledElements.Notebook({});
@@ -68,14 +79,19 @@ angular
         // Return the first attached image
         var getDefaultImage = function getDefaultImage (product) {
             var attachments = product.attachment;
-            if (attachments) {
-                for (var i = 0; i < attachments.length; i++) {
-                    if (attachments[i].type === "Picture") {
-                        return attachments[i].url;
-                    }
+            var url;
+            for (var i = 0; i < attachments.length; i++) {
+                if (attachments[i].type === "Picture") {
+                    url = attachments[i].url;
+                    break;
                 }
             }
-            return "";
+
+            if (url && url !== "") {
+                return url;
+            } else {
+                return $scope.baseUrl + "/resources/core/images/default-no-image.png";
+            }
         };
 
         var getPriceAlterationData = function getPriceAlterationData (price) {

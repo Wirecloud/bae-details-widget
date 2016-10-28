@@ -18,6 +18,9 @@
     <requirements>
     <feature name="ComponentManagement"/>
   </requirements>
+  <preferences>
+    <preference name="server_url" type="text" label="Server URL" description="URL of the BAE server."/>
+  </preferences>
   <wiring>
     <inputendpoint name="offering" type="text" label="Offering" description="" friendcode=""/>
   </wiring>

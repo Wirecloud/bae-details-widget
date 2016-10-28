@@ -14,7 +14,7 @@
           <md-card class="offering" ng-repeat="product in offering.allProducts">
             <div class="thumbnail">
               <span class="label"> {{ product.asset.metadata.type}} </span>
-              <img class="image" ng-src="{{ getDefaultImage(product) }}">
+              <img class="image" check-image ng-src="{{ getDefaultImage(product) }}">
             </div>  
             <div class="panel-body">
               <div id="offeringName" class="h4 text ellipsis">
@@ -39,7 +39,9 @@
 
         <div id="products" class="section">
           <md-card class="offering" ng-repeat="product in offering.allProducts">
-            <div class="thumbnail">              <img class="image" ng-src="{{ getDefaultImage(product) }}">            </div>
+            <div class="thumbnail">
+              <img class="image" check-image ng-src="{{ getDefaultImage(product) }}">
+            </div>
             <div class="panel-body">
               <div id="offeringName" class="h4 text ellipsis">
                 <strong>
