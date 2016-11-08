@@ -40,6 +40,13 @@ angular
                 var notebook = new StyledElements.Notebook({});
                 document.getElementById("container").appendChild(notebook.wrapperElement);
 
+                var tabData = notebook.createTab({
+                    label: "Products",
+                    closable: false
+                });
+
+                tabData.wrapperElement.appendChild(document.getElementById("products"));
+
                 // Only create component tab if theres any component.
                 if (offering.allProducts.some(function (product) {
                     return product.asset && product.asset.resourceType === "Wirecloud component";
@@ -52,13 +59,6 @@ angular
                 } else {
                     document.getElementById("components").remove();
                 }
-
-                var tabData = notebook.createTab({
-                    label: "Products",
-                    closable: false
-                });
-
-                tabData.wrapperElement.appendChild(document.getElementById("products"));
 
                 var tabPayment = notebook.createTab({
                     label: "Pricing",
