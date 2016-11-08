@@ -6,7 +6,7 @@
  * Licensed under the MIT license.
  */
 
-/*global MashupPlatform, angular, StyledElements */
+/*global MashupPlatform, moment, angular, StyledElements */
 
 angular
     .module('widget', ['ngMaterial', 'ngResource', "angularMoment"])
@@ -32,20 +32,26 @@ angular
                 callback = data.callback;
 
                 // Clear view
-                $scope.offering = [];
+                $scope.offering = null;
                 $scope.$apply();
                 $scope.baseUrl = MashupPlatform.prefs.get('server_url');
+                $scope.getOfferingTime = getOfferingTime;
 
                 // Create tabs
                 var notebook = new StyledElements.Notebook({});
                 document.getElementById("container").appendChild(notebook.wrapperElement);
 
-                var tabData = notebook.createTab({
+                var tabDetails = notebook.createTab({
+                    label: "Details",
+                    closable: false
+                });
+                tabDetails.wrapperElement.appendChild(document.getElementById("details"));
+
+                var tabProducts = notebook.createTab({
                     label: "Products",
                     closable: false
                 });
-
-                tabData.wrapperElement.appendChild(document.getElementById("products"));
+                tabProducts.wrapperElement.appendChild(document.getElementById("products"));
 
                 // Only create component tab if theres any component.
                 if (offering.allProducts.some(function (product) {
@@ -92,6 +98,10 @@ angular
             } else {
                 return $scope.baseUrl + "/resources/core/images/default-no-image.png";
             }
+        };
+
+        var getOfferingTime = function getOfferingTime() {
+            return moment($scope.offering.lastUpdate).format("dddd, MMMM Do YYYY, h:mm:ss a");
         };
 
         var getPriceAlterationData = function getPriceAlterationData (price) {

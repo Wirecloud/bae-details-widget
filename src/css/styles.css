@@ -152,3 +152,8 @@
     height: 40px;
     overflow: hidden;
 }
+
+dl {
+    margin: 10px;
+    font-size: medium;
+}
