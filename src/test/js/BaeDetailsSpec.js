@@ -1,4 +1,4 @@
-/*global $, MashupPlatform, MockMP, BaeDetails, beforeAll, afterAll, beforeEach*/
+/* globals MashupPlatform, MockMP, beforeAll, beforeEach, describe, it, expect*/
 (function () {
     "use strict";
 

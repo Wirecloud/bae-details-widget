@@ -6,7 +6,7 @@
  * Licensed under the MIT license.
  */
 
-/*global MashupPlatform, moment, angular, StyledElements */
+/* global MashupPlatform, moment, angular, StyledElements */
 
 angular
     .module('widget', ['ngMaterial', 'ngResource', "angularMoment"])
@@ -24,7 +24,7 @@ angular
         "use strict";
 
         var callback;
-        var init = function init () {
+        var init = function init() {
 
             MashupPlatform.wiring.registerCallback('offering', function (data) {
 
@@ -83,7 +83,7 @@ angular
         };
 
         // Return the first attached image
-        var getDefaultImage = function getDefaultImage (product) {
+        var getDefaultImage = function getDefaultImage(product) {
             var attachments = product.attachment;
             var url;
             for (var i = 0; i < attachments.length; i++) {
@@ -104,7 +104,7 @@ angular
             return moment($scope.offering.lastUpdate).format("dddd, MMMM Do YYYY, h:mm:ss a");
         };
 
-        var getPriceAlterationData = function getPriceAlterationData (price) {
+        var getPriceAlterationData = function getPriceAlterationData(price) {
             var aux = price.productOfferPriceAlteration.price;
             return Object.keys(aux)[0] + ": " + aux[Object.keys(aux)[0]];
         };
@@ -114,7 +114,7 @@ angular
         };
 
         // Install / uninstall target offering
-        var toggleInstall = function toggleInstall (product) {
+        var toggleInstall = function toggleInstall(product) {
             if (!(product.asset && product.asset.resourceType === "Wirecloud component")) {
                 return;
             }
@@ -133,12 +133,12 @@ angular
             }
 
             promise.then(function () {
-                callback (product, !product.installed);
+                callback(product, !product.installed);
             });
         };
 
-        //Get the location of a product's asset.
-        var getAssetUrl = function getAssetUrl (product) {
+        // Get the location of a product's asset.
+        var getAssetUrl = function getAssetUrl(product) {
             for (var i = 0; i < product.productSpecCharacteristic.length; i++) {
                 if (product.productSpecCharacteristic[i].name === "Location") {
                     return product.productSpecCharacteristic[i].productSpecCharacteristicValue[0].value;
