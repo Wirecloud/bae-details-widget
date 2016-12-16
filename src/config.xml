@@ -11,7 +11,7 @@
     <description>Display details about a BAE offering.</description>
     <longdescription>DESCRIPTION.md</longdescription>
     <changelog>doc/changelog.md</changelog>
-    <doc>doc/index.md</doc>
+    <doc>doc/userguide.md</doc>
     <license>MIT</license>
     <issuetracker>https://github.com/Wirecloud/bae-details-widget/issues</issuetracker>
   </details>

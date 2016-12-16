@@ -41,21 +41,13 @@ grunt
 
 If everything goes well, you will find a wgt file in the `dist` folder.
 
-## Settings
+## Documentation
 
--`Server URL`: The URL of the BAE server.
-
-## Wiring
-
-### Input Endpoints
-
--`Offering`: The offering whose details are to be displayed.
-
-## Usage
-
-This Widget its created and configured automatically by the [bae-browser-widget](https://github.com/Wirecloud/bae-browser-widget) so it doesnt need to be added to the dashboard when being used by it.
-
-Send an offering with a complete productSpecification field to its input to display the offering's details.
+Documentation about how to use this widget is available on the
+[User Guide](src/doc/userguide.md). Anyway, you can find general information
+about how to use widgets on the
+[WireCloud's User Guide](https://wirecloud.readthedocs.io/en/stable/user_guide/)
+available on Read the Docs.
 
 ## Copyright and License
 
