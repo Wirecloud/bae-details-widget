@@ -2,8 +2,8 @@
  * bae-details
  * https://github.com/mognom/bae-details-widget
  *
- * Copyright (c) 2016 CoNWeT
- * Licensed under the MIT license.
+ * Copyright (c) 2016 CoNWeT Lab., Universidad Politécnica de Madrid
+ * Licensed under the Apache-2.0 license.
  */
 
 var ConfigParser = require('wirecloud-config-parser');

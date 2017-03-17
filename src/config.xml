@@ -12,7 +12,7 @@
     <longdescription>DESCRIPTION.md</longdescription>
     <changelog>doc/changelog.md</changelog>
     <doc>doc/userguide.md</doc>
-    <license>MIT</license>
+    <license>Apache-2.0</license>
     <issuetracker>https://github.com/Wirecloud/bae-details-widget/issues</issuetracker>
   </details>
     <requirements>
