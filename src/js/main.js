@@ -129,7 +129,7 @@ angular
                 var meta = product.asset.metadata;
                 promise = MashupPlatform.components.uninstall(meta.vendor, meta.name, meta.version);
             } else {
-                promise = MashupPlatform.components.install(getAssetUrl(product), market_info);
+                promise = (MashupPlatform.components.install({url: getAssetUrl(product), market_endpoint: market_info}));
             }
 
             promise.then(function () {
