@@ -157,3 +157,9 @@ dl {
     margin: 10px;
     font-size: medium;
 }
+
+.text-ellipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}

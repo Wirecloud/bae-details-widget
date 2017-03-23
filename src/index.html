@@ -36,7 +36,7 @@
             <div class="panel-body">
               <div id="offeringName" class="h4 text ellipsis">
                 <strong>
-                  <p>{{ product.name }}</p>
+                  <p class="text-ellipsis">{{ product.name }}</p>
                 </strong>
               </div>
 
@@ -60,7 +60,7 @@
             <div class="panel-body">
               <div id="offeringName" class="h4 text ellipsis">
                 <strong>
-                  <p>{{ product.asset.metadata.title }}</p>
+                  <p class="text-ellipsis">{{ product.asset.metadata.title }}</p>
                 </strong>
               </div>
 
@@ -81,7 +81,7 @@
         <div id="paymentInfo" class="section">
           <md-card class="priceplan" ng-repeat="priceplan in offering.productOfferingPrice">
             <div ng-class="getPanelType(priceplan)">
-              <p class="centerText">{{ priceplan.name }}</p>
+              <p class="text-ellipsis centerText">{{ priceplan.name }}</p>
             </div>
             <div class="centerText panel-body">
               <span class="centerText bold">{{ priceplan.price.taxIncludedAmount }}</span>
