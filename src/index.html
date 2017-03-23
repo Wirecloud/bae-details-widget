@@ -73,7 +73,7 @@
               </div>
             </div>
             <div class="buttonsDiv">
-              <md-button id="installButton" class="se-btn btn-warning" ng-click="onToggleInstall(product)">{{ product.installed ? "Uninstall" : "Install" }}</md-button>
+              <md-button id="installButton" ng-if="isInstallable(offering, product)" class="se-btn btn-warning" ng-click="onToggleInstall(product)">{{ product.installed ? "Uninstall" : "Install" }}</md-button>
             </div>
           </md-card>
         </div>

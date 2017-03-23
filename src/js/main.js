@@ -78,6 +78,7 @@ angular
                 $scope.getPriceAlterationData = getPriceAlterationData;
                 $scope.getPanelType = getPanelType;
                 $scope.onToggleInstall = toggleInstall;
+                $scope.isInstallable = isInstallable;
                 $scope.$apply();
             });
         };
@@ -144,6 +145,10 @@ angular
                     return product.productSpecCharacteristic[i].productSpecCharacteristicValue[0].value;
                 }
             }
+        };
+
+        var isInstallable = function isInstallable(offering, product) {
+            return offering.bought && product.asset.resourceType === "Wirecloud component"
         };
 
         init();
