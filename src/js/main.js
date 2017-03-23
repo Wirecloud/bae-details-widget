@@ -66,11 +66,15 @@ angular
                     document.getElementById("components").remove();
                 }
 
-                var tabPayment = notebook.createTab({
-                    label: "Pricing",
-                    closable: false
-                });
-                tabPayment.wrapperElement.appendChild(document.getElementById("paymentInfo"));
+                if (offering.productOfferingPrice != null) {
+                    var tabPayment = notebook.createTab({
+                        label: "Pricing",
+                        closable: false
+                    });
+                    tabPayment.wrapperElement.appendChild(document.getElementById("paymentInfo"));
+                } else {
+                    document.getElementById("paymentInfo").remove();
+                }
 
                 // Update view
                 $scope.offering = offering;
