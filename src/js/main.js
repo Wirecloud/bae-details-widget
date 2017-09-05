@@ -125,16 +125,12 @@ angular
             }
 
             var promise;
-            var market_info = {
-                name: "admin/fiware-bae",
-                store: "fiware-bae",
-            };
 
             if (product.installed) {
                 var meta = product.asset.metadata;
                 promise = MashupPlatform.components.uninstall(meta.vendor, meta.name, meta.version);
             } else {
-                promise = (MashupPlatform.components.install({url: getAssetUrl(product), market_endpoint: market_info}));
+                promise = MashupPlatform.components.install({url: getAssetUrl(product), headers: {"FIWARE-OAuth-Token": "true", "FIWARE-OAuth-Header-Name": "Authorization"}});
             }
 
             promise.then(function () {
