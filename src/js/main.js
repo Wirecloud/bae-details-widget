@@ -2,7 +2,7 @@
  * bae-details
  * https://github.com/mognom/bae-details-widget
  *
- * Copyright (c) 2016 CoNWeT Lab., Universidad Politécnica de Madrid
+ * Copyright (c) 2016-2017 CoNWeT Lab., Universidad Politécnica de Madrid
  * Licensed under the Apache-2.0 license.
  */
 
